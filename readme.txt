@@ -6,12 +6,12 @@ command line, to convert a set of TTF and OTF fonts into all the other
 currently used CSS3 @font-face formats (i.e. EOT, SVG, WOFF).  
 Syntax:
 
-    convertFonts.sh <filelist>
+    convertfonts <filelist>
 
 For example, if you wanted to convert all the .ttf files in the directory
 you are in, you could type in the command:
 
-    $ convertFonts.sh *.ttf
+    $ ./convertfonts *.ttf
 
 The fonts will then be converted to the .eot, .woff, and .svg formats.  It
 will also generate a stylesheet, stylesheet.css, that will produce the

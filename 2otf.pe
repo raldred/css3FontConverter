@@ -1,2 +1,3 @@
 Open($1)
-Generate($fontname + ".otf")
+Reencode("unicode")
+Generate($2 + ".otf")
