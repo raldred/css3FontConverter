@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(echo $0 | sed "s/convertfonts.sh//")
+SCRIPT_DIR=$(echo $0 | sed "s/convertfonts//")
 OUTPUT_DIR=${1%/*}
 
 SFNT2WOFF=$(which sfnt2woff 2> /dev/null)
@@ -96,6 +96,10 @@ do
 		FONT_NAME=$(echo $(getFontName $ORIG_FILE) | sed -e 's/^[ \t]*//' | sed "s/-$//")
 		FONT_FAMILY=$(echo $(getFontFamily $ORIG_FILE) | sed -e 's/^[ \t]*//' | sed "s/-$//")
 		FONT_WEIGHT=$(echo $(getFontWeight $ORIG_FILE) | sed -e 's/^[ \t]*//')
+
+		if [ "$FONT_FAMILY" == "" ]; then
+			FONT_FAMILY=$ORIG_STUB
+		fi
 
 		echo $FONT_FAMILY
 
